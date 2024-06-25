@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function useStateHelpers<T>(
-    key: string,
-    initialValue: T
-): [T, (value: T) => void] {
+function useStateHelpers<T>(key: string, initialValue: T): [T, (value: T) => void] {
     // Mendapatkan nilai dari localStorage atau menggunakan nilai awal
     const [storedValue, setStoredValue] = useState<T>(() => {
         if (typeof window === 'undefined') {

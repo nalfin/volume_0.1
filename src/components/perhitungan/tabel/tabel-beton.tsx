@@ -42,31 +42,31 @@ interface TabelBetonProps {
     //     kerikil?: string
     //     air?: string
     // } | null
-    tabelPilecap?: any
-    tabelPedestal?: any
-    tabelSloof?: any
-    tabelKolom?: any
-    tabelBalok?: any
-    tabelPelat?: any
+    tabelBetPilecap?: any
+    tabelBetPedestal?: any
+    tabelBetSloof?: any
+    tabelBetKolom?: any
+    tabelBetBalok?: any
+    tabelBetPelat?: any
     tabelId: string
 }
 
 const TabelBeton = ({
-    tabelPilecap,
-    tabelPedestal,
-    tabelSloof,
-    tabelKolom,
-    tabelBalok,
-    tabelPelat,
+    tabelBetPilecap,
+    tabelBetPedestal,
+    tabelBetSloof,
+    tabelBetKolom,
+    tabelBetBalok,
+    tabelBetPelat,
     tabelId
 }: TabelBetonProps) => {
     const { strVol, strSem, strPas, strKer, strAir } = calcBetonTotal({
-        tabelPilecap,
-        tabelPedestal,
-        tabelSloof,
-        tabelKolom,
-        tabelBalok,
-        tabelPelat
+        tabelBetPilecap,
+        tabelBetPedestal,
+        tabelBetSloof,
+        tabelBetKolom,
+        tabelBetBalok,
+        tabelBetPelat
     })
     return (
         <Table id={tabelId}>
@@ -96,59 +96,59 @@ const TabelBeton = ({
             <TableBody>
                 <TableRow>
                     <TableCell className="h-0 border-x border-b pl-4 text-left text-sm font-medium">Pilecap</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPilecap?.nama}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPilecap?.volume}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPilecap?.semen}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPilecap?.pasir}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPilecap?.kerikil}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPilecap?.air}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPilecap?.nama}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPilecap?.volume}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPilecap?.semen}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPilecap?.pasir}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPilecap?.kerikil}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPilecap?.air}</TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell className="h-0 border-x border-b pl-4 text-left text-sm font-medium">
                         Kolom Pedestal
                     </TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPedestal?.nama}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPedestal?.volume}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPedestal?.semen}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPedestal?.pasir}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPedestal?.kerikil}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPedestal?.air}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPedestal?.nama}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPedestal?.volume}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPedestal?.semen}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPedestal?.pasir}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPedestal?.kerikil}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPedestal?.air}</TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell className="h-0 border-x border-b pl-4 text-left text-sm font-medium">Sloof</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelSloof?.nama}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelSloof?.volume}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelSloof?.semen}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelSloof?.pasir}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelSloof?.kerikil}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelSloof?.air}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetSloof?.nama}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetSloof?.volume}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetSloof?.semen}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetSloof?.pasir}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetSloof?.kerikil}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetSloof?.air}</TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell className="h-0 border-x border-b pl-4 text-left text-sm font-medium">Kolom</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelKolom?.nama}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelKolom?.volume}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelKolom?.semen}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelKolom?.pasir}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelKolom?.kerikil}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelKolom?.air}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetKolom?.nama}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetKolom?.volume}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetKolom?.semen}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetKolom?.pasir}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetKolom?.kerikil}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetKolom?.air}</TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell className="h-0 border-x border-b pl-4 text-left text-sm font-medium">Balok</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelBalok?.nama}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelBalok?.volume}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelBalok?.semen}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelBalok?.pasir}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelBalok?.kerikil}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelBalok?.air}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetBalok?.nama}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetBalok?.volume}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetBalok?.semen}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetBalok?.pasir}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetBalok?.kerikil}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetBalok?.air}</TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell className="h-0 border-x border-b pl-4 text-left text-sm font-medium">Pelat</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPelat?.nama}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPelat?.volume}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPelat?.semen}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPelat?.pasir}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPelat?.kerikil}</TableCell>
-                    <TableCell className="border-x border-b text-center">{tabelPelat?.air}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPelat?.nama}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPelat?.volume}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPelat?.semen}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPelat?.pasir}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPelat?.kerikil}</TableCell>
+                    <TableCell className="border-x border-b text-center">{tabelBetPelat?.air}</TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell

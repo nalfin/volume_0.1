@@ -1,4 +1,4 @@
-interface koefKebBahanProps {
+interface koefBetonProps {
     [key: string]: {
         semen: number
         pasir: number
@@ -7,7 +7,7 @@ interface koefKebBahanProps {
     }
 }
 
-export const koefKebBahan: koefKebBahanProps = {
+export const koefBeton: koefBetonProps = {
     K100: {
         semen: 247,
         pasir: 869,

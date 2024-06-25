@@ -41,99 +41,98 @@ const HitungBeton = () => {
     const [selectedSatuan, setSelectedSatuan] = useStateHelpers<string>('selectedSatuan', defaultSatuan)
     const [selectedKoef, setSelectedKoef] = useStateHelpers<string>('selectedKoef', defaultKoef)
     // PILECAP
-    const [namaPilecap, setNamaPilecap] = useStateHelpers<string>('namaPilecap', '')
-    const [pPilecap, setPilecap] = useStateHelpers<string>('pPilecap', '')
-    const [lPilecap, setLPilecap] = useStateHelpers<string>('lPilecap', '')
-    const [tPilecap, setTPilecap] = useStateHelpers<string>('tPilecap', '')
-    const [jmlPilecap, setJmlPilecap] = useStateHelpers<string>('jmlPilecap', '')
+    const [betNmaPilecap, setBetNmaPilecap] = useStateHelpers<string>('betNmaPilecap', '')
+    const [betPjgPilecap, setBetPjgPilecap] = useStateHelpers<string>('betPjgPilecap', '')
+    const [betLbrPilecap, setBetLbrPilecap] = useStateHelpers<string>('betLbrPilecap', '')
+    const [betTgiPilecap, setBetTgiPilecap] = useStateHelpers<string>('betTgiPilecap', '')
+    const [betJmlPilecap, setBetJmlPilecap] = useStateHelpers<string>('betJmlPilecap', '')
     // PEDESTAL
-    const [namaPedestal, setNamaPedestal] = useStateHelpers<string>('namaPedestal', '')
-    const [pPedestal, setPedestal] = useStateHelpers<string>('pPedestal', '')
-    const [lPedestal, setLPedestal] = useStateHelpers<string>('lPedestal', '')
-    const [tPedestal, setTPedestal] = useStateHelpers<string>('tPedestal', '')
-    const [jmlPedestal, setJmlPedestal] = useStateHelpers<string>('jmlPedestal', '')
+    const [betNmaPedestal, setBetNmaPedestal] = useStateHelpers<string>('betNmaPedestal', '')
+    const [betPjgPedestal, setBetPjgPedestal] = useStateHelpers<string>('betPjgPedestal', '')
+    const [betLbrPedestal, setBetLbrPedestal] = useStateHelpers<string>('betLbrPedestal', '')
+    const [betTgiPedestal, setBetTgiPedestal] = useStateHelpers<string>('betTgiPedestal', '')
+    const [betJmlPedestal, setBetJmlPedestal] = useStateHelpers<string>('betJmlPedestal', '')
     //SLOOF
-    const [namaSloof, setNamaSloof] = useStateHelpers<string>('namaSloof', '')
-    const [pSloof, setSloof] = useStateHelpers<string>('pSloof', '')
-    const [lSloof, setLSloof] = useStateHelpers<string>('lSloof', '')
-    const [tSloof, setTSloof] = useStateHelpers<string>('tSloof', '')
+    const [betNmaSloof, setBetNmaSloof] = useStateHelpers<string>('betNmaSloof', '')
+    const [betPjgSloof, setBetPjgSloof] = useStateHelpers<string>('betPjgSloof', '')
+    const [betLbrSloof, setBetLbrSloof] = useStateHelpers<string>('betLbrSloof', '')
+    const [betTgiSloof, setBetTgiSloof] = useStateHelpers<string>('betTgiSloof', '')
     // KOLOM
-    const [namaKolom, setNamaKolom] = useStateHelpers<string>('namaKolom', '')
-    const [pKolom, setKolom] = useStateHelpers<string>('pKolom', '')
-    const [lKolom, setLKolom] = useStateHelpers<string>('lKolom', '')
-    const [tKolom, setTKolom] = useStateHelpers<string>('tKolom', '')
-    const [jmlKolom, setJmlKolom] = useStateHelpers<string>('jmlKolom', '')
+    const [betNmaKolom, setBetNmaKolom] = useStateHelpers<string>('betNmaKolom', '')
+    const [betPjgKolom, setBetPjgKolom] = useStateHelpers<string>('betPjgKolom', '')
+    const [betLbrKolom, setBetLbrKolom] = useStateHelpers<string>('betLbrKolom', '')
+    const [betTgiKolom, setBetTgiKolom] = useStateHelpers<string>('betTgiKolom', '')
+    const [betJmlKolom, setBetJmlKolom] = useStateHelpers<string>('betJmlKolom', '')
     // BALOK
-    const [namaBalok, setNamaBalok] = useStateHelpers<string>('namaBalok', '')
-    const [pBalok, setBalok] = useStateHelpers<string>('pBalok', '')
-    const [lBalok, setLBalok] = useStateHelpers<string>('lBalok', '')
-    const [tBalok, setTBalok] = useStateHelpers<string>('tBalok', '')
+    const [betNmaBalok, setBetNmaBalok] = useStateHelpers<string>('betNmaBalok', '')
+    const [betPjgBalok, setBetPjgBalok] = useStateHelpers<string>('betPjgBalok', '')
+    const [betLbrBalok, setBetLbrBalok] = useStateHelpers<string>('betLbrBalok', '')
+    const [betTgiBalok, setBetTgiBalok] = useStateHelpers<string>('betTgiBalok', '')
     // PELAT
-    const [namaPelat, setNamaPelat] = useStateHelpers<string>('namaPelat', '')
-    const [pPelat, setPelat] = useStateHelpers<string>('pPelat', '')
-    const [lPelat, setLPelat] = useStateHelpers<string>('lPelat', '')
-    const [tPelat, setTPelat] = useStateHelpers<string>('tPelat', '')
-    const [pLubTangga1, setPLubTangga1] = useStateHelpers<string>('pLubTangga1', '')
-    const [lLubTangga1, setLLubTangga1] = useStateHelpers<string>('lLubTangga1', '')
-    const [pLubTangga2, setPLubTangga2] = useStateHelpers<string>('pLubTangga2', '')
-    const [lLubTangga2, setLLubTangga2] = useStateHelpers<string>('lLubTangga2', '')
+    const [betNmaPelat, setBetNmaPelat] = useStateHelpers<string>('betNmaPelat', '')
+    const [betPjgPelat, setBetPjgPelat] = useStateHelpers<string>('betPjgPelat', '')
+    const [betLbrPelat, setBetLbrPelat] = useStateHelpers<string>('betLbrPelat', '')
+    const [betTgiPelat, setBetTgiPelat] = useStateHelpers<string>('betTgiPelat', '')
+    const [betPjgLT1, setBetPjgLT1] = useStateHelpers<string>('betPjgLT1', '')
+    const [betLbrLT1, setBetLbrLT1] = useStateHelpers<string>('betLbrLT1', '')
+    const [betPjgLT2, setBetPjgLT2] = useStateHelpers<string>('betPjgLT2', '')
+    const [betLbrLT2, setBetLbrLT2] = useStateHelpers<string>('betLbrLT2', '')
 
     // ----------
     // TABEL
     // ----------
-    const [tabelPilecap, setTabelPilecap] = useTableData('tabelPilecap')
-    const [tabelPedestal, setTabelPedestal] = useTableData('tabelPedestal')
-    const [tabelSloof, setTabelSloof] = useTableData('tabelSloof')
-    const [tabelKolom, setTabelKolom] = useTableData('tabelKolom')
-    const [tabelBalok, setTabelBalok] = useTableData('tabelBalok')
-    const [tabelPelat, setTabelPelat] = useTableData('tabelPelat')
+    const [tabelBetPilecap, setTabelBetPilecap] = useTableData('tabelBetPilecap')
+    const [tabelBetPedestal, setTabelBetPedestal] = useTableData('tabelBetPedestal')
+    const [tabelBetSloof, setTabelBetSloof] = useTableData('tabelBetSloof')
+    const [tabelBetKolom, setTabelBetKolom] = useTableData('tabelBetKolom')
+    const [tabelBetBalok, setTabelBetBalok] = useTableData('tabelBetBalok')
+    const [tabelBetPelat, setTabelBetPelat] = useTableData('tabelBetPelat')
 
-    console.log(tabelPilecap)
     // ----------
     // RESET
     // ----------
-    const handleReset = () => {
+    const resetDataBeton = () => {
         setSelectedValue(defaultValue)
         setSelectedSatuan(defaultSatuan)
         setSelectedKoef(defaultKoef)
 
         // PILECAP
-        setNamaPilecap('')
-        setPilecap('')
-        setLPilecap('')
-        setTPilecap('')
-        setJmlPilecap('')
+        setBetNmaPilecap('')
+        setBetPjgPilecap('')
+        setBetLbrPilecap('')
+        setBetTgiPilecap('')
+        setBetJmlPilecap('')
         // PEDESTAL
-        setNamaPedestal('')
-        setPedestal('')
-        setLPedestal('')
-        setTPedestal('')
-        setJmlPedestal('')
+        setBetNmaPedestal('')
+        setBetPjgPedestal('')
+        setBetLbrPedestal('')
+        setBetTgiPedestal('')
+        setBetJmlPedestal('')
         // SLOOF
-        setNamaSloof('')
-        setSloof('')
-        setLSloof('')
-        setTSloof('')
+        setBetNmaSloof('')
+        setBetPjgSloof('')
+        setBetLbrSloof('')
+        setBetTgiSloof('')
         // KOLOM
-        setNamaKolom('')
-        setKolom('')
-        setLKolom('')
-        setTKolom('')
-        setJmlKolom('')
+        setBetNmaKolom('')
+        setBetPjgKolom('')
+        setBetLbrKolom('')
+        setBetTgiKolom('')
+        setBetJmlKolom('')
         // BALOK
-        setNamaBalok('')
-        setBalok('')
-        setLBalok('')
-        setTBalok('')
+        setBetNmaBalok('')
+        setBetPjgBalok('')
+        setBetLbrBalok('')
+        setBetTgiBalok('')
         // PELAT
-        setNamaPelat('')
-        setPelat('')
-        setLPelat('')
-        setTPelat('')
-        setPLubTangga1('')
-        setLLubTangga1('')
-        setPLubTangga2('')
-        setLLubTangga2('')
+        setBetNmaPelat('')
+        setBetPjgPelat('')
+        setBetLbrPelat('')
+        setBetTgiPelat('')
+        setBetPjgLT1('')
+        setBetLbrLT1('')
+        setBetPjgLT2('')
+        setBetLbrLT2('')
 
         localStorage.removeItem('selectedValue')
         localStorage.removeItem('selectedSatuan')
@@ -178,14 +177,19 @@ const HitungBeton = () => {
         localStorage.removeItem('lLubTangga2')
 
         // RESET TABEL
-        localStorage.removeItem('tabelPilecap')
-        localStorage.removeItem('tabelPedestal')
-        localStorage.removeItem('tabelSloof')
-        localStorage.removeItem('tabelKolom')
-        localStorage.removeItem('tabelBalok')
-        localStorage.removeItem('tabelPelat')
+        localStorage.removeItem('tabelBetPilecap')
+        localStorage.removeItem('tabelBetPedestal')
+        localStorage.removeItem('tabelBetSloof')
+        localStorage.removeItem('tabelBetKolom')
+        localStorage.removeItem('tabelBetBalok')
+        localStorage.removeItem('tabelBetPelat')
 
-        setTabelPilecap(null)
+        setTabelBetPilecap(null)
+        setTabelBetPedestal(null)
+        setTabelBetSloof(null)
+        setTabelBetKolom(null)
+        setTabelBetBalok(null)
+        setTabelBetPelat(null)
 
         // REFRESH HALAMAN
         window.location.reload()
@@ -194,19 +198,33 @@ const HitungBeton = () => {
     // ----------
     // PERHITUNGAN
     // ----------
-    const { calcPilecap } = useCalcBetonPilecap(setTabelPilecap)
-    const { calcPedestal } = useCalcBetonPedestal(setTabelPedestal)
-    const { calcSloof } = useCalcBetonSloof(setTabelSloof)
-    const { calcKolom } = useCalcBetonKolom(setTabelKolom)
-    const { calcBalok } = useCalcBetonBalok(setTabelBalok)
-    const { calcPelat } = useCalcBetonPelat(setTabelPelat)
+    const { calcPilecap } = useCalcBetonPilecap(setTabelBetPilecap)
+    const { calcPedestal } = useCalcBetonPedestal(setTabelBetPedestal)
+    const { calcSloof } = useCalcBetonSloof(setTabelBetSloof)
+    const { calcKolom } = useCalcBetonKolom(setTabelBetKolom)
+    const { calcBalok } = useCalcBetonBalok(setTabelBetBalok)
+    const { calcPelat } = useCalcBetonPelat(setTabelBetPelat)
 
     // ----------
     // EXPORT EXCEL
     // ----------
     const exportToExcel = (tableId: string, fileName: string) => {
         const table = document.getElementById(tableId)
-        const workbook = XLSX.utils.table_to_book(table)
+        const workbook = XLSX.utils.table_to_book(table, {
+            raw: true // Mengambil data sebagai raw strings
+        })
+
+        // Mengubah format sel yang mengandung angka
+        const worksheet = workbook.Sheets[workbook.SheetNames[0]]
+        for (let cell in worksheet) {
+            if (cell.startsWith('!')) continue // Lewati header dan metadata
+            if (typeof worksheet[cell].v === 'number') {
+                worksheet[cell].z = '#,##0.00' // Format angka dengan pemisah ribuan dan dua desimal
+                worksheet[cell].t = 'n' // Pastikan tipe sel adalah 'number'
+                worksheet[cell].v = parseFloat(worksheet[cell].v.toFixed(2)) // Format angka dengan dua desimal
+            }
+        }
+
         XLSX.writeFile(workbook, `${fileName}.xlsx`)
     }
 
@@ -221,93 +239,93 @@ const HitungBeton = () => {
                     {isClient && selectedValue === 'pilecap' && (
                         <InputPilecap
                             satuan={selectedSatuan}
-                            namaItem={namaPilecap}
-                            setNamaItem={setNamaPilecap}
-                            pPilecap={pPilecap}
-                            setPilecap={setPilecap}
-                            lPilecap={lPilecap}
-                            setLPilecap={setLPilecap}
-                            tPilecap={tPilecap}
-                            setTPilecap={setTPilecap}
-                            jmlPilecap={jmlPilecap}
-                            setJmlPilecap={setJmlPilecap}
+                            namPil={betNmaPilecap}
+                            pjgPil={betPjgPilecap}
+                            lbrPil={betLbrPilecap}
+                            tgiPil={betTgiPilecap}
+                            jmlPil={betJmlPilecap}
+                            setNamPil={setBetNmaPilecap}
+                            setPjgPil={setBetPjgPilecap}
+                            setLbrPil={setBetLbrPilecap}
+                            setTgiPil={setBetTgiPilecap}
+                            setJmlPil={setBetJmlPilecap}
                         />
                     )}
                     {isClient && selectedValue === 'pedestal' && (
                         <InputPedestal
                             satuan={selectedSatuan}
-                            namaItem={namaPedestal}
-                            setNamaItem={setNamaPedestal}
-                            pPedestal={pPedestal}
-                            setPedestal={setPedestal}
-                            lPedestal={lPedestal}
-                            setLPedestal={setLPedestal}
-                            tPedestal={tPedestal}
-                            setTPedestal={setTPedestal}
-                            jmlPedestal={jmlPedestal}
-                            setJmlPedestal={setJmlPedestal}
+                            namPed={betNmaPedestal}
+                            pjgPed={betPjgPedestal}
+                            lbrPed={betLbrPedestal}
+                            tgiPed={betTgiPedestal}
+                            jmlPed={betJmlPedestal}
+                            setNamPed={setBetNmaPedestal}
+                            setPjgPed={setBetPjgPedestal}
+                            setLbrPed={setBetLbrPedestal}
+                            setTgiPed={setBetTgiPedestal}
+                            setJmlPed={setBetJmlPedestal}
                         />
                     )}
                     {isClient && selectedValue === 'sloof' && (
                         <InputSloof
                             satuan={selectedSatuan}
-                            namaItem={namaSloof}
-                            setNamaItem={setNamaSloof}
-                            pSloof={pSloof}
-                            setSloof={setSloof}
-                            lSloof={lSloof}
-                            setLSloof={setLSloof}
-                            tSloof={tSloof}
-                            setTSloof={setTSloof}
+                            namSlo={betNmaSloof}
+                            pjgSlo={betPjgSloof}
+                            lbrSlo={betLbrSloof}
+                            tgiSlo={betTgiSloof}
+                            setNamSlo={setBetNmaSloof}
+                            setPjgSlo={setBetPjgSloof}
+                            setLbrSlo={setBetLbrSloof}
+                            setTgiSlo={setBetTgiSloof}
                         />
                     )}
                     {isClient && selectedValue === 'kolom' && (
                         <InputKolom
                             satuan={selectedSatuan}
-                            namaItem={namaKolom}
-                            setNamaItem={setNamaKolom}
-                            pKolom={pKolom}
-                            setKolom={setKolom}
-                            lKolom={lKolom}
-                            setLKolom={setLKolom}
-                            tKolom={tKolom}
-                            setTKolom={setTKolom}
-                            jmlKolom={jmlKolom}
-                            setJmlKolom={setJmlKolom}
+                            namKol={betNmaKolom}
+                            pjgKol={betPjgKolom}
+                            lbrKol={betLbrKolom}
+                            tgiKol={betTgiKolom}
+                            jmlKol={betJmlKolom}
+                            setNamKol={setBetNmaKolom}
+                            setPjgKol={setBetPjgKolom}
+                            setLbrKol={setBetLbrKolom}
+                            setTgiKol={setBetTgiKolom}
+                            setJmlKol={setBetJmlKolom}
                         />
                     )}
                     {isClient && selectedValue === 'balok' && (
                         <InputBalok
                             satuan={selectedSatuan}
-                            namaItem={namaBalok}
-                            setNamaItem={setNamaBalok}
-                            pBalok={pBalok}
-                            setBalok={setBalok}
-                            lBalok={lBalok}
-                            setLBalok={setLBalok}
-                            tBalok={tBalok}
-                            setTBalok={setTBalok}
+                            namBlk={betNmaBalok}
+                            pjgBlk={betPjgBalok}
+                            lbrBlk={betLbrBalok}
+                            tgiBlk={betTgiBalok}
+                            setNamBlk={setBetNmaBalok}
+                            setPjgBlk={setBetPjgBalok}
+                            setLbrBlk={setBetLbrBalok}
+                            setTgiBlk={setBetTgiBalok}
                         />
                     )}
                     {isClient && selectedValue === 'pelat' && (
                         <InputPelat
                             satuan={selectedSatuan}
-                            namaItem={namaPelat}
-                            setNamaItem={setNamaPelat}
-                            pPelat={pPelat}
-                            setPelat={setPelat}
-                            lPelat={lPelat}
-                            setLPelat={setLPelat}
-                            tPelat={tPelat}
-                            setTPelat={setTPelat}
-                            pLubTangga1={pLubTangga1}
-                            setPLubTangga1={setPLubTangga1}
-                            lLubTangga1={lLubTangga1}
-                            setLLubTangga1={setLLubTangga1}
-                            pLubTangga2={pLubTangga2}
-                            setPLubTangga2={setPLubTangga2}
-                            lLubTangga2={lLubTangga2}
-                            setLLubTangga2={setLLubTangga2}
+                            namPlt={betNmaPelat}
+                            pjgPlt={betPjgPelat}
+                            lbrPlt={betLbrPelat}
+                            tgiPlt={betTgiPelat}
+                            pjgLT1={betPjgLT1}
+                            lbrLT1={betLbrLT1}
+                            pjgLT2={betPjgLT2}
+                            lbrLT2={betLbrLT2}
+                            setNamPlt={setBetNmaPelat}
+                            setPjgPlt={setBetPjgPelat}
+                            setLbrPlt={setBetLbrPelat}
+                            setTgiPlt={setBetTgiPelat}
+                            setPjgLT1={setBetPjgLT1}
+                            setLbrLT1={setBetLbrLT1}
+                            setPjgLT2={setBetPjgLT2}
+                            setLbrLT2={setBetLbrLT2}
                         />
                     )}
                 </div>
@@ -315,12 +333,12 @@ const HitungBeton = () => {
                 <div className="col-span-10 rounded-sm border border-border p-4 lg:col-span-7">
                     <TabelBeton
                         tabelId="tabelBeton"
-                        tabelPilecap={tabelPilecap}
-                        tabelPedestal={tabelPedestal}
-                        tabelSloof={tabelSloof}
-                        tabelKolom={tabelKolom}
-                        tabelBalok={tabelBalok}
-                        tabelPelat={tabelPelat}
+                        tabelBetPilecap={tabelBetPilecap}
+                        tabelBetPedestal={tabelBetPedestal}
+                        tabelBetSloof={tabelBetSloof}
+                        tabelBetKolom={tabelBetKolom}
+                        tabelBetBalok={tabelBetBalok}
+                        tabelBetPelat={tabelBetPelat}
                     />
                 </div>
             </div>
@@ -331,57 +349,57 @@ const HitungBeton = () => {
                     className="button__anim bg-indigo-700 hover:no-underline"
                     onClick={() => {
                         calcPilecap({
-                            nama: namaPilecap,
-                            p: pPilecap,
-                            l: lPilecap,
-                            t: tPilecap,
-                            jml: jmlPilecap,
+                            nama: betNmaPilecap,
+                            p: betPjgPilecap,
+                            l: betLbrPilecap,
+                            t: betTgiPilecap,
+                            jml: betJmlPilecap,
                             satuan: selectedSatuan,
                             koef: selectedKoef
                         })
                         calcPedestal({
-                            nama: namaPedestal,
-                            p: pPedestal,
-                            l: lPedestal,
-                            t: tPedestal,
-                            jml: jmlPedestal,
+                            nama: betNmaPedestal,
+                            p: betPjgPedestal,
+                            l: betLbrPedestal,
+                            t: betTgiPedestal,
+                            jml: betJmlPedestal,
                             satuan: selectedSatuan,
                             koef: selectedKoef
                         })
                         calcSloof({
-                            nama: namaSloof,
-                            p: pSloof,
-                            l: lSloof,
-                            t: tSloof,
+                            nama: betNmaSloof,
+                            p: betPjgSloof,
+                            l: betLbrSloof,
+                            t: betTgiSloof,
                             satuan: selectedSatuan,
                             koef: selectedKoef
                         })
                         calcKolom({
-                            nama: namaKolom,
-                            p: pKolom,
-                            l: lKolom,
-                            t: tKolom,
-                            jml: jmlKolom,
+                            nama: betNmaKolom,
+                            p: betPjgKolom,
+                            l: betLbrKolom,
+                            t: betTgiKolom,
+                            jml: betJmlKolom,
                             satuan: selectedSatuan,
                             koef: selectedKoef
                         })
                         calcBalok({
-                            nama: namaBalok,
-                            p: pBalok,
-                            l: lBalok,
-                            t: tBalok,
+                            nama: betNmaBalok,
+                            p: betPjgBalok,
+                            l: betLbrBalok,
+                            t: betTgiBalok,
                             satuan: selectedSatuan,
                             koef: selectedKoef
                         })
                         calcPelat({
-                            nama: namaPelat,
-                            p: pPelat,
-                            l: lPelat,
-                            t: tPelat,
-                            pLuTa1: pLubTangga1,
-                            lLuTa1: lLubTangga1,
-                            pLuTa2: pLubTangga2,
-                            lLuTa2: lLubTangga2,
+                            nama: betNmaPelat,
+                            p: betPjgPelat,
+                            l: betLbrPelat,
+                            t: betTgiPelat,
+                            pLuTa1: betPjgLT1,
+                            lLuTa1: betLbrLT1,
+                            pLuTa2: betPjgLT2,
+                            lLuTa2: betLbrLT2,
                             satuan: selectedSatuan,
                             koef: selectedKoef
                         })
@@ -395,7 +413,7 @@ const HitungBeton = () => {
                         </div>
                     </div>
                 </Button>
-                <Button variant="link" className="button__anim bg-red-700 hover:no-underline" onClick={handleReset}>
+                <Button variant="link" className="button__anim bg-red-700 hover:no-underline" onClick={resetDataBeton}>
                     <IconRefresh className="mr-1 size-4" />
                     <div className="overflow-hidden">
                         <div className="button__texts">

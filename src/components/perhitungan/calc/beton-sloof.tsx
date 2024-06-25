@@ -1,4 +1,4 @@
-import { koefKebBahan } from '@/components/perhitungan/lib/koefKebBahan'
+import { koefBeton } from '@/components/perhitungan/lib/koef-beton'
 import { useToast } from '@/components/ui/use-toast'
 
 interface SloofData {
@@ -11,7 +11,19 @@ interface SloofData {
 }
 
 interface SetTabelSloofProps {
-    (data: { nama?: string; volume?: string; semen?: string; pasir?: string; kerikil?: string; air?: string }): void
+    (data: {
+        nama?: string
+        volume?: string
+        semen?: string
+        pasir?: string
+        kerikil?: string
+        air?: string
+        numVol?: number
+        numSem?: number
+        numPas?: number
+        numKer?: number
+        numAir?: number
+    }): void
 }
 
 const useCalcBetonSloof = (setTabelSloof: SetTabelSloofProps) => {
@@ -23,7 +35,7 @@ const useCalcBetonSloof = (setTabelSloof: SetTabelSloofProps) => {
         // KOEF BAHAN
         let bahan: any
         if (koef) {
-            bahan = koefKebBahan[koef]
+            bahan = koefBeton[koef]
         }
 
         // NILAI BAHAN
@@ -35,11 +47,11 @@ const useCalcBetonSloof = (setTabelSloof: SetTabelSloofProps) => {
         if (p === '' || l === '' || t === '') {
             setTabelSloof({
                 nama: '-',
-                volume: 'NaN',
-                semen: 'NaN',
-                pasir: 'NaN',
-                kerikil: 'NaN',
-                air: 'NaN'
+                volume: '-',
+                semen: '-',
+                pasir: '-',
+                kerikil: '-',
+                air: '-'
             })
             toast({
                 title: `Nilai tidak boleh kosong!`,
@@ -85,11 +97,11 @@ const useCalcBetonSloof = (setTabelSloof: SetTabelSloofProps) => {
         const bKerikil = Math.ceil(kerikil * 1000000) / 1000000
         const bAir = Math.ceil(air * 1000000) / 1000000
 
-        const convVol = vol.toFixed(2).replace('.', ',')
-        const convSemen = bSemen.toFixed(2).replace('.', ',')
-        const convPasir = bPasir.toFixed(2).replace('.', ',')
-        const convKerikil = bKerikil.toFixed(2).replace('.', ',')
-        const convAir = bAir.toFixed(2).replace('.', ',')
+        const convVol = vol.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const convSemen = bSemen.toLocaleString('id-ID', { minimumFractionDigits: 4, maximumFractionDigits: 4 })
+        const convPasir = bPasir.toLocaleString('id-ID', { minimumFractionDigits: 4, maximumFractionDigits: 4 })
+        const convKerikil = bKerikil.toLocaleString('id-ID', { minimumFractionDigits: 4, maximumFractionDigits: 4 })
+        const convAir = bAir.toLocaleString('id-ID', { minimumFractionDigits: 3, maximumFractionDigits: 3 })
 
         setTabelSloof({
             nama: nama || '-',
@@ -97,7 +109,12 @@ const useCalcBetonSloof = (setTabelSloof: SetTabelSloofProps) => {
             semen: convSemen || '-',
             pasir: convPasir || '-',
             kerikil: convKerikil || '-',
-            air: convAir || '-'
+            air: convAir || '-',
+            numVol: vol,
+            numSem: bSemen,
+            numPas: bPasir,
+            numKer: bKerikil,
+            numAir: bAir
         })
     }
 

@@ -1,4 +1,4 @@
-import { koefKebBahan } from '@/components/perhitungan/lib/koefKebBahan'
+import { koefBeton } from '@/components/perhitungan/lib/koef-beton'
 import { useToast } from '@/components/ui/use-toast'
 
 interface PilecapData {
@@ -11,11 +11,23 @@ interface PilecapData {
     koef: string
 }
 
-interface SetTabelPilecapProps {
-    (data: { nama?: string; volume?: string; semen?: string; pasir?: string; kerikil?: string; air?: string }): void
+interface setTabelBetPilecapProps {
+    (data: {
+        nama?: string
+        volume?: string
+        semen?: string
+        pasir?: string
+        kerikil?: string
+        air?: string
+        numVol?: number
+        numSem?: number
+        numPas?: number
+        numKer?: number
+        numAir?: number
+    }): void
 }
 
-const useCalcBetonPilecap = (setTabelPilecap: SetTabelPilecapProps) => {
+const useCalcBetonPilecap = (setTabelBetPilecap: setTabelBetPilecapProps) => {
     const { toast } = useToast()
 
     const calcPilecap = (data: PilecapData) => {
@@ -24,7 +36,7 @@ const useCalcBetonPilecap = (setTabelPilecap: SetTabelPilecapProps) => {
         // KOEF BAHAN
         let bahan: any
         if (koef) {
-            bahan = koefKebBahan[koef]
+            bahan = koefBeton[koef]
         }
 
         // NILAI BAHAN
@@ -34,13 +46,13 @@ const useCalcBetonPilecap = (setTabelPilecap: SetTabelPilecapProps) => {
         const kAir = bahan.air
 
         if (p === '' || l === '' || t === '') {
-            setTabelPilecap({
+            setTabelBetPilecap({
                 nama: '-',
-                volume: 'NaN',
-                semen: 'NaN',
-                pasir: 'NaN',
-                kerikil: 'NaN',
-                air: 'NaN'
+                volume: '-',
+                semen: '-',
+                pasir: '-',
+                kerikil: '-',
+                air: '-'
             })
             toast({
                 title: `Nilai tidak boleh kosong!`,
@@ -87,19 +99,27 @@ const useCalcBetonPilecap = (setTabelPilecap: SetTabelPilecapProps) => {
         const bKerikil = Math.ceil(kerikil * 1000000) / 1000000
         const bAir = Math.ceil(air * 1000000) / 1000000
 
-        const convVol = vol.toFixed(2).replace('.', ',')
-        const convSemen = bSemen.toFixed(2).replace('.', ',')
-        const convPasir = bPasir.toFixed(2).replace('.', ',')
-        const convKerikil = bKerikil.toFixed(2).replace('.', ',')
-        const convAir = bAir.toFixed(2).replace('.', ',')
+        const convVol = vol.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const convSemen = bSemen.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const convPasir = bPasir.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const convKerikil = bKerikil.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const convAir = bAir.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
-        setTabelPilecap({
+        setTabelBetPilecap({
             nama: nama || '-',
             volume: convVol || '-',
             semen: convSemen || '-',
             pasir: convPasir || '-',
             kerikil: convKerikil || '-',
-            air: convAir || '-'
+            air: convAir || '-',
+            numVol: vol,
+            numSem: bSemen,
+            numPas: bPasir,
+            numKer: bKerikil,
+            numAir: bAir
         })
     }
 

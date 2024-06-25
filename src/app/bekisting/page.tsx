@@ -1,5 +1,12 @@
+import LayoutPerhitungan from '@/components/layout-perhitungan'
+import HitungBekisting from '@/components/perhitungan/hitung-bekisting'
+
 const BekistingPage = () => {
-    return <div>Bekisting</div>
+    return (
+        <LayoutPerhitungan title="Pekerjaan Bekisting">
+            <HitungBekisting />
+        </LayoutPerhitungan>
+    )
 }
 
 export default BekistingPage

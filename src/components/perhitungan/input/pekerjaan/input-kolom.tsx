@@ -3,40 +3,40 @@
 import InputForm from '../input-form'
 
 interface InputKolomProps {
-    namaItem: string
-    setNamaItem: (value: string) => void
     satuan?: string
-    pKolom: string
-    setKolom: (value: string) => void
-    lKolom: string
-    setLKolom: (value: string) => void
-    tKolom: string
-    setTKolom: (value: string) => void
-    jmlKolom: string
-    setJmlKolom: (value: string) => void
+    namKol: string
+    pjgKol: string
+    lbrKol: string
+    tgiKol: string
+    jmlKol: string
+    setNamKol: (value: string) => void
+    setPjgKol: (value: string) => void
+    setLbrKol: (value: string) => void
+    setTgiKol: (value: string) => void
+    setJmlKol: (value: string) => void
 }
 
 const InputKolom = ({
-    namaItem,
-    setNamaItem,
     satuan,
-    pKolom,
-    setKolom,
-    lKolom,
-    setLKolom,
-    tKolom,
-    setTKolom,
-    jmlKolom,
-    setJmlKolom
+    namKol,
+    pjgKol,
+    lbrKol,
+    tgiKol,
+    jmlKol,
+    setNamKol,
+    setPjgKol,
+    setLbrKol,
+    setTgiKol,
+    setJmlKol
 }: InputKolomProps) => {
     return (
         <>
             <div className="my-2 space-y-4">
-                <InputForm label="Nama Item" unit={satuan} type="text" val={namaItem} setValue={setNamaItem} />
-                <InputForm label="Panjang" unit={satuan} type="number" val={pKolom} setValue={setKolom} />
-                <InputForm label="Lebar" unit={satuan} type="number" val={lKolom} setValue={setLKolom} />
-                <InputForm label="Tinggi" unit={satuan} type="number" val={tKolom} setValue={setTKolom} />
-                <InputForm label="Jumlah" unit={''} type="number" val={jmlKolom} setValue={setJmlKolom} />
+                <InputForm label="Nama Item" unit={''} type="text" val={namKol} setValue={setNamKol} />
+                <InputForm label="Panjang" unit={satuan} type="number" val={pjgKol} setValue={setPjgKol} />
+                <InputForm label="Lebar" unit={satuan} type="number" val={lbrKol} setValue={setLbrKol} />
+                <InputForm label="Tinggi" unit={satuan} type="number" val={tgiKol} setValue={setTgiKol} />
+                <InputForm label="Jumlah" unit={''} type="number" val={jmlKol} setValue={setJmlKol} />
             </div>
         </>
     )

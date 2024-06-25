@@ -1,66 +1,106 @@
 interface CalcBetonTotalProps {
-    tabelPilecap: any
-    tabelPedestal: any
-    tabelSloof: any
-    tabelKolom: any
-    tabelBalok: any
-    tabelPelat: any
+    tabelBetPilecap: any
+    tabelBetPedestal: any
+    tabelBetSloof: any
+    tabelBetKolom: any
+    tabelBetBalok: any
+    tabelBetPelat: any
 }
 
 export const calcBetonTotal = ({
-    tabelPilecap,
-    tabelPedestal,
-    tabelSloof,
-    tabelKolom,
-    tabelBalok,
-    tabelPelat
+    tabelBetPilecap,
+    tabelBetPedestal,
+    tabelBetSloof,
+    tabelBetKolom,
+    tabelBetBalok,
+    tabelBetPelat
 }: CalcBetonTotalProps) => {
-    const volPilecap = parseFloat(parseFloat(tabelPilecap?.volume?.replace(',', '.') || '0').toFixed(2))
-    const volPedestal = parseFloat(parseFloat(tabelPedestal?.volume?.replace(',', '.') || '0').toFixed(2))
-    const volSloof = parseFloat(parseFloat(tabelSloof?.volume?.replace(',', '.') || '0').toFixed(2))
-    const volKolom = parseFloat(parseFloat(tabelKolom?.volume?.replace(',', '.') || '0').toFixed(2))
-    const volBalok = parseFloat(parseFloat(tabelBalok?.volume?.replace(',', '.') || '0').toFixed(2))
-    const volPelat = parseFloat(parseFloat(tabelPelat?.volume?.replace(',', '.') || '0').toFixed(2))
+    const volPil = tabelBetPilecap?.numVol
+    const volPed = tabelBetPedestal?.numVol
+    const volSlo = tabelBetSloof?.numVol
+    const volKol = tabelBetKolom?.numVol
+    const volBal = tabelBetBalok?.numVol
+    const volPel = tabelBetPelat?.numVol
 
-    const semPilecap = parseFloat(parseFloat(tabelPilecap?.semen?.replace(',', '.') || '0').toFixed(2))
-    const semPedestal = parseFloat(parseFloat(tabelPedestal?.semen?.replace(',', '.') || '0').toFixed(2))
-    const semSloof = parseFloat(parseFloat(tabelSloof?.semen?.replace(',', '.') || '0').toFixed(2))
-    const semKolom = parseFloat(parseFloat(tabelKolom?.semen?.replace(',', '.') || '0').toFixed(2))
-    const semBalok = parseFloat(parseFloat(tabelBalok?.semen?.replace(',', '.') || '0').toFixed(2))
-    const semPelat = parseFloat(parseFloat(tabelPelat?.semen?.replace(',', '.') || '0').toFixed(2))
+    const semPil = tabelBetPilecap?.numSem
+    const semPed = tabelBetPedestal?.numSem
+    const semSlo = tabelBetSloof?.numSem
+    const semKol = tabelBetKolom?.numSem
+    const semBal = tabelBetBalok?.numSem
+    const semPel = tabelBetPelat?.numSem
 
-    const pasPilecap = parseFloat(parseFloat(tabelPilecap?.pasir?.replace(',', '.') || '0').toFixed(2))
-    const pasPedestal = parseFloat(parseFloat(tabelPedestal?.pasir?.replace(',', '.') || '0').toFixed(2))
-    const pasSloof = parseFloat(parseFloat(tabelSloof?.pasir?.replace(',', '.') || '0').toFixed(2))
-    const pasKolom = parseFloat(parseFloat(tabelKolom?.pasir?.replace(',', '.') || '0').toFixed(2))
-    const pasBalok = parseFloat(parseFloat(tabelBalok?.pasir?.replace(',', '.') || '0').toFixed(2))
-    const pasPelat = parseFloat(parseFloat(tabelPelat?.pasir?.replace(',', '.') || '0').toFixed(2))
+    const pasPil = tabelBetPilecap?.numPas
+    const pasPed = tabelBetPedestal?.numPas
+    const pasSlo = tabelBetSloof?.numPas
+    const pasKol = tabelBetKolom?.numPas
+    const pasBal = tabelBetBalok?.numPas
+    const pasPel = tabelBetPelat?.numPas
 
-    const kerPilecap = parseFloat(parseFloat(tabelPilecap?.kerikil?.replace(',', '.') || '0').toFixed(2))
-    const kerPedestal = parseFloat(parseFloat(tabelPedestal?.kerikil?.replace(',', '.') || '0').toFixed(2))
-    const kerSloof = parseFloat(parseFloat(tabelSloof?.kerikil?.replace(',', '.') || '0').toFixed(2))
-    const kerKolom = parseFloat(parseFloat(tabelKolom?.kerikil?.replace(',', '.') || '0').toFixed(2))
-    const kerBalok = parseFloat(parseFloat(tabelBalok?.kerikil?.replace(',', '.') || '0').toFixed(2))
-    const kerPelat = parseFloat(parseFloat(tabelPelat?.kerikil?.replace(',', '.') || '0').toFixed(2))
+    const kerPil = tabelBetPilecap?.numKer
+    const kerPed = tabelBetPedestal?.numKer
+    const kerSlo = tabelBetSloof?.numKer
+    const kerKol = tabelBetKolom?.numKer
+    const kerBal = tabelBetBalok?.numKer
+    const kerPel = tabelBetPelat?.numKer
 
-    const airPilecap = parseFloat(parseFloat(tabelPilecap?.air?.replace(',', '.') || '0').toFixed(2))
-    const airPedestal = parseFloat(parseFloat(tabelPedestal?.air?.replace(',', '.') || '0').toFixed(2))
-    const airSloof = parseFloat(parseFloat(tabelSloof?.air?.replace(',', '.') || '0').toFixed(2))
-    const airKolom = parseFloat(parseFloat(tabelKolom?.air?.replace(',', '.') || '0').toFixed(2))
-    const airBalok = parseFloat(parseFloat(tabelBalok?.air?.replace(',', '.') || '0').toFixed(2))
-    const airPelat = parseFloat(parseFloat(tabelPelat?.air?.replace(',', '.') || '0').toFixed(2))
+    const airPil = tabelBetPilecap?.numAir
+    const airPed = tabelBetPedestal?.numAir
+    const airSlo = tabelBetSloof?.numAir
+    const airKol = tabelBetKolom?.numAir
+    const airBal = tabelBetBalok?.numAir
+    const airPel = tabelBetPelat?.numAir
 
-    const totalVol = volPilecap + volPedestal + volSloof + volKolom + volBalok + volPelat
-    const totalSem = semPilecap + semPedestal + semSloof + semKolom + semBalok + semPelat
-    const totalPas = pasPilecap + pasPedestal + pasSloof + pasKolom + pasBalok + pasPelat
-    const totalKer = kerPilecap + kerPedestal + kerSloof + kerKolom + kerBalok + kerPelat
-    const totalAir = airPilecap + airPedestal + airSloof + airKolom + airBalok + airPelat
+    const volPIL = isNaN(volPil) ? 0 : volPil
+    const volPED = isNaN(volPed) ? 0 : volPed
+    const volSLO = isNaN(volSlo) ? 0 : volSlo
+    const volKOL = isNaN(volKol) ? 0 : volKol
+    const volBAL = isNaN(volBal) ? 0 : volBal
+    const volPEL = isNaN(volPel) ? 0 : volPel
 
-    const strVol = totalVol.toFixed(2).replace('.', ',')
-    const strSem = totalSem.toFixed(2).replace('.', ',')
-    const strPas = totalPas.toFixed(2).replace('.', ',')
-    const strKer = totalKer.toFixed(2).replace('.', ',')
-    const strAir = totalAir.toFixed(2).replace('.', ',')
+    const semPIL = isNaN(semPil) ? 0 : semPil
+    const semPED = isNaN(semPed) ? 0 : semPed
+    const semSLO = isNaN(semSlo) ? 0 : semSlo
+    const semKOL = isNaN(semKol) ? 0 : semKol
+    const semBAL = isNaN(semBal) ? 0 : semBal
+    const semPEL = isNaN(semPel) ? 0 : semPel
+
+    const pasPIL = isNaN(pasPil) ? 0 : pasPil
+    const pasPED = isNaN(pasPed) ? 0 : pasPed
+    const pasSLO = isNaN(pasSlo) ? 0 : pasSlo
+    const pasKOL = isNaN(pasKol) ? 0 : pasKol
+    const pasBAL = isNaN(pasBal) ? 0 : pasBal
+    const pasPEL = isNaN(pasPel) ? 0 : pasPel
+
+    const kerPIL = isNaN(kerPil) ? 0 : kerPil
+    const kerPED = isNaN(kerPed) ? 0 : kerPed
+    const kerSLO = isNaN(kerSlo) ? 0 : kerSlo
+    const kerKOL = isNaN(kerKol) ? 0 : kerKol
+    const kerBAL = isNaN(kerBal) ? 0 : kerBal
+    const kerPEL = isNaN(kerPel) ? 0 : kerPel
+
+    const airPIL = isNaN(airPil) ? 0 : airPil
+    const airPED = isNaN(airPed) ? 0 : airPed
+    const airSLO = isNaN(airSlo) ? 0 : airSlo
+    const airKOL = isNaN(airKol) ? 0 : airKol
+    const airBAL = isNaN(airBal) ? 0 : airBal
+    const airPEL = isNaN(airPel) ? 0 : airPel
+
+    const totalVol = volPIL + volPED + volSLO + volKOL + volBAL + volPEL
+    const totalSem = semPIL + semPED + semSLO + semKOL + semBAL + semPEL
+    const totalPas = pasPIL + pasPED + pasSLO + pasKOL + pasBAL + pasPEL
+    const totalKer = kerPIL + kerPED + kerSLO + kerKOL + kerBAL + kerPEL
+    const totalAir = airPIL + airPED + airSLO + airKOL + airBAL + airPEL
+
+    const strVol =
+        totalVol === 0 ? '-' : totalVol.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+    const strSem =
+        totalSem === 0 ? '-' : totalSem.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 4 })
+    const strPas =
+        totalPas === 0 ? '-' : totalPas.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 4 })
+    const strKer =
+        totalKer === 0 ? '-' : totalKer.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 4 })
+    const strAir =
+        totalAir === 0 ? '-' : totalAir.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 4 })
 
     return {
         strVol,
