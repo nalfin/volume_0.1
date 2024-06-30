@@ -346,7 +346,7 @@ const HitungBeton = () => {
             <div className="mt-4 flex flex-col gap-4 lg:absolute lg:right-0 lg:top-0 lg:mt-0 lg:flex-row">
                 <Button
                     variant="link"
-                    className="button__anim bg-indigo-700 hover:no-underline"
+                    className="button__anim bg-indigo-700 text-white hover:no-underline"
                     onClick={() => {
                         calcPilecap({
                             nama: betNmaPilecap,
@@ -413,7 +413,11 @@ const HitungBeton = () => {
                         </div>
                     </div>
                 </Button>
-                <Button variant="link" className="button__anim bg-red-700 hover:no-underline" onClick={resetDataBeton}>
+                <Button
+                    variant="link"
+                    className="button__anim bg-red-700 text-white hover:no-underline"
+                    onClick={resetDataBeton}
+                >
                     <IconRefresh className="mr-1 size-4" />
                     <div className="overflow-hidden">
                         <div className="button__texts">
@@ -424,7 +428,7 @@ const HitungBeton = () => {
                 </Button>
                 <Button
                     variant="link"
-                    className="button__anim bg-indigo-700 hover:no-underline"
+                    className="button__anim bg-indigo-700 text-white hover:no-underline"
                     onClick={() => exportToExcel('tabelBeton', 'Pekerjaan Beton')}
                 >
                     <IconDownload className="mr-1 size-4" />

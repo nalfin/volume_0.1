@@ -344,7 +344,7 @@ const HitungBekisting = () => {
             <div className="mt-4 flex flex-col gap-4 lg:absolute lg:right-0 lg:top-0 lg:mt-0 lg:flex-row">
                 <Button
                     variant="link"
-                    className="button__anim bg-indigo-700 hover:no-underline"
+                    className="button__anim bg-indigo-700 text-white hover:no-underline"
                     onClick={() => {
                         calcPilecap({
                             satuan: selectedSatuan,
@@ -407,7 +407,7 @@ const HitungBekisting = () => {
                 </Button>
                 <Button
                     variant="link"
-                    className="button__anim bg-red-700 hover:no-underline"
+                    className="button__anim bg-red-700 text-white hover:no-underline"
                     onClick={resetDataBekisting}
                 >
                     <IconRefresh className="mr-1 size-4" />
@@ -420,7 +420,7 @@ const HitungBekisting = () => {
                 </Button>
                 <Button
                     variant="link"
-                    className="button__anim bg-indigo-700 hover:no-underline"
+                    className="button__anim bg-indigo-700 text-white hover:no-underline"
                     onClick={() => exportToExcel('tabelBekisting', 'Pekerjaan Bekisting')}
                 >
                     <IconDownload className="mr-1 size-4" />

@@ -1,6 +1,3 @@
-import { cn } from '@/lib/utils'
-import Image from 'next/image'
-import { Button } from './ui/button'
 import Link from 'next/link'
 
 interface CardMauProps {
@@ -10,31 +7,15 @@ interface CardMauProps {
     description?: string
     link?: string
     buttonText?: string
+    children: React.ReactNode
 }
 
-const CardMau = ({
-    imgSrc,
-    classCard,
-    title,
-    description,
-    link,
-    buttonText
-}: CardMauProps) => {
+const CardMau = ({ children, title, description, link, buttonText }: CardMauProps) => {
     return (
         <div className="flex w-full flex-col items-center gap-10 rounded-2xl border border-border bg-card p-10 dark:bg-card/40">
-            <div className={cn('h-[120px]', classCard)}>
-                <Image
-                    className="h-full w-full"
-                    src={imgSrc || ''}
-                    alt="Card 1"
-                    width={100}
-                    height={100}
-                />
-            </div>
+            {children}
             <div className="h-[153px] space-y-4 text-center">
-                <h3 className="text-[24px] font-bold leading-[150%] tracking-[0%]">
-                    {title}
-                </h3>
+                <h3 className="text-[24px] font-bold leading-[150%] tracking-[0%]">{title}</h3>
                 <p className="text-[18px] font-normal leading-[150%] tracking-[0%]">
                     {description}
                 </p>

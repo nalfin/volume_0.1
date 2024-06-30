@@ -1,23 +1,14 @@
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue
-} from '@/components/ui/select'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 interface SelectKoefisienBetonProps {
     koefChange: (value: string) => void
     defaultKoef: string
 }
 
-const SelectKoefisienBeton = ({
-    koefChange,
-    defaultKoef
-}: SelectKoefisienBetonProps) => {
+const SelectKoefisienBeton = ({ koefChange, defaultKoef }: SelectKoefisienBetonProps) => {
     return (
         <div className="flex w-full items-center gap-3 pt-2 text-sm font-normal">
-            <p className="min-w-[160px] lg:min-w-[170px]"> Koefisien Bahan</p>
+            <p className="min-w-[160px] lg:min-w-[200px]"> Koefisien Bahan</p>
             <div className="flex w-full items-center gap-2">
                 <p>:</p>
                 <Select onValueChange={koefChange} defaultValue={defaultKoef}>
@@ -27,9 +18,7 @@ const SelectKoefisienBeton = ({
                     <SelectContent>
                         <SelectItem value="K100">K 100</SelectItem>
                         <SelectItem value="K125">K 125</SelectItem>
-                        <SelectItem value="K100s3">
-                            K 100 (Slump : 3-6 cm)
-                        </SelectItem>
+                        <SelectItem value="K100s3">K 100 (Slump : 3-6 cm)</SelectItem>
                         <SelectItem value="K175">K 175</SelectItem>
                         <SelectItem value="K200">K 200</SelectItem>
                         <SelectItem value="K225">K 225</SelectItem>

@@ -1,8 +1,10 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import InputForm from '../input-form'
 
 interface InputBalokProps {
+    className?: string
     satuan?: string
     namBlk: string
     pjgBlk: string
@@ -15,6 +17,7 @@ interface InputBalokProps {
 }
 
 const InputBalok = ({
+    className,
     satuan,
     namBlk,
     pjgBlk,
@@ -27,7 +30,7 @@ const InputBalok = ({
 }: InputBalokProps) => {
     return (
         <>
-            <div className="my-2 space-y-4">
+            <div className={cn('my-2 space-y-4', className)}>
                 <InputForm label="Nama Item" unit={''} type="text" val={namBlk} setValue={setNamBlk} />
                 <InputForm label="Panjang" unit={satuan} type="number" val={pjgBlk} setValue={setPjgBlk} />
                 <InputForm label="Lebar" unit={satuan} type="number" val={lbrBlk} setValue={setLbrBlk} />

@@ -1,8 +1,10 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import InputForm from '../input-form'
 
 interface InputKolomProps {
+    className?: string
     satuan?: string
     namKol: string
     pjgKol: string
@@ -17,6 +19,7 @@ interface InputKolomProps {
 }
 
 const InputKolom = ({
+    className,
     satuan,
     namKol,
     pjgKol,
@@ -31,7 +34,7 @@ const InputKolom = ({
 }: InputKolomProps) => {
     return (
         <>
-            <div className="my-2 space-y-4">
+            <div className={cn('my-2 space-y-4', className)}>
                 <InputForm label="Nama Item" unit={''} type="text" val={namKol} setValue={setNamKol} />
                 <InputForm label="Panjang" unit={satuan} type="number" val={pjgKol} setValue={setPjgKol} />
                 <InputForm label="Lebar" unit={satuan} type="number" val={lbrKol} setValue={setLbrKol} />

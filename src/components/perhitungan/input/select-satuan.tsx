@@ -1,13 +1,15 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { cn } from '@/lib/utils'
 
 interface SelectSatuanProps {
     defaultSatuan: string
+    className?: string
     satuanChange: (value: string) => void
 }
 
-const SelectSatuan = ({ satuanChange, defaultSatuan }: SelectSatuanProps) => {
+const SelectSatuan = ({ satuanChange, defaultSatuan, className }: SelectSatuanProps) => {
     return (
-        <div className="relative w-full">
+        <div className={cn('relative w-full', className)}>
             <p className="absolute -mt-[8px] ml-3 bg-background text-xs">Pilih Satuan Perhitungan</p>
             <Select onValueChange={satuanChange} defaultValue={defaultSatuan}>
                 <SelectTrigger className="h-11 w-full border border-border focus:ring-0">

@@ -23,7 +23,7 @@ const InputForm = ({ label, unit, val, type, className, setValue, className2, cl
 
     return (
         <div className={cn('flex w-full items-center gap-3 text-sm font-normal', className)}>
-            <p className={cn('min-w-[160px] lg:min-w-[170px]', className2)}>{label}</p>
+            <p className={cn('min-w-[160px] lg:min-w-[200px]', className2)}>{label}</p>
             <div className={cn('flex items-center gap-2', className3)}>
                 <p>:</p>
                 <InputModifikasi val={val} type={type} setValue={setValue} />

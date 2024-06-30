@@ -1,8 +1,10 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import InputForm from '../input-form'
 
 interface InputPedestalProps {
+    className?: string
     satuan?: string
     namPed: string
     pjgPed: string
@@ -17,6 +19,7 @@ interface InputPedestalProps {
 }
 
 const InputPedestal = ({
+    className,
     satuan,
     namPed,
     pjgPed,
@@ -31,7 +34,7 @@ const InputPedestal = ({
 }: InputPedestalProps) => {
     return (
         <>
-            <div className="my-2 space-y-4">
+            <div className={cn('mt-2 space-y-2', className)}>
                 <InputForm label="Nama Item" unit={''} type="text" val={namPed} setValue={setNamPed} />
                 <InputForm label="Panjang" unit={satuan} type="number" val={pjgPed} setValue={setPjgPed} />
                 <InputForm label="Lebar" unit={satuan} type="number" val={lbrPed} setValue={setLbrPed} />

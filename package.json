@@ -19,6 +19,7 @@
         "@radix-ui/react-slot": "^1.1.0",
         "@radix-ui/react-tabs": "^1.1.0",
         "@radix-ui/react-toast": "^1.2.1",
+        "@radix-ui/react-tooltip": "^1.1.2",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.1",
         "lucide-react": "^0.396.0",
@@ -27,9 +28,12 @@
         "react": "^18",
         "react-dom": "^18",
         "react-hook-form": "^7.52.0",
+        "react-xlsx-wrapper": "^2.6.0",
         "tailwind-merge": "^2.3.0",
         "tailwindcss-animate": "^1.0.7",
         "xlsx": "^0.18.5",
+        "xlsx-js-style": "^1.2.0",
+        "xlsx-style": "^0.8.13",
         "zod": "^3.23.8"
     },
     "devDependencies": {

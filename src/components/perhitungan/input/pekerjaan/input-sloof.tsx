@@ -1,8 +1,10 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import InputForm from '../input-form'
 
 interface InputSloofProps {
+    className?: string
     satuan?: string
     namSlo: string
     pjgSlo: string
@@ -15,6 +17,7 @@ interface InputSloofProps {
 }
 
 const InputSloof = ({
+    className,
     satuan,
     namSlo,
     pjgSlo,
@@ -27,7 +30,7 @@ const InputSloof = ({
 }: InputSloofProps) => {
     return (
         <>
-            <div className="my-2 space-y-4">
+            <div className={cn('my-2 space-y-4', className)}>
                 <InputForm label="Nama Item" unit={''} type="text" val={namSlo} setValue={setNamSlo} />
                 <InputForm label="Panjang" unit={satuan} type="number" val={pjgSlo} setValue={setPjgSlo} />
                 <InputForm label="Lebar" unit={satuan} type="number" val={lbrSlo} setValue={setLbrSlo} />
