@@ -383,14 +383,30 @@ const useCalcPembesianPelat = (setTabelPelat: SetTabelPelatProps) => {
         const volBL1 = volBetonPelat - volBetonLT1
         const volBL2 = volBetonPelat - volBetonLT2
         const volBeton = volBL1 + volBL2
-        const kaw = volBeton * 0.5
+        // const kaw = volBeton * 0.5
+        const kaw = vol * (1.5 / 100)
 
-        const formatVOL = vol.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const formatVOL = vol.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
         // const formatTUT = totBerTU.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTAY = superTop.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTAX = top.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTBY = superBot.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTBX = bottom.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const formatTAY = superTop.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTAX = top.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTBY = superBot.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTBX = bottom.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
         // const formatTAT1 = totBeTAT.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTAL1 = totBeTAL.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTAT2 = totBeTAT.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
@@ -407,7 +423,10 @@ const useCalcPembesianPelat = (setTabelPelat: SetTabelPelatProps) => {
         // const formatTXT1 = totBerTXTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTXL1 = totBerTXLap.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTXT2 = totBerTXTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatKAWA = kaw.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const formatKAWA = kaw.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
 
         setTabelPelat({
             nama: nama || '-',

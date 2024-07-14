@@ -254,30 +254,68 @@ const useCalcPembesianBalok = (setTabelBalok: SetTabelBalokProps) => {
         const berTPi = ((0.25 * (22 / 7) * dTP ** 2) / 1000000) * 7850
         const totBerTPi = ((pjgTPi * nTP) / 1000) * berTPi
 
-        const vol = totBerTPi + totBerSL + 2 * totBerST + totBeTBL + 2 * totBeTBT + totBeTAL + 2 * totBeTAT
+        const vol =
+            totBerTPi + totBerSL + 2 * totBerST + totBeTBL + 2 * totBeTBT + totBeTAL + 2 * totBeTAT
         const volBeton = (luPB * P) / 10 ** 9
         const totVBeton = volBeton * JML
-        const kaw = totVBeton * 0.5
+        // const kaw = totVBeton * 0.5
+        const kaw = vol * (1.5 / 100)
 
-        const formatVOL = vol.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const formatVOL = vol.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
         // const formatTUT = totBerTU.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTAT1 = totBeTAT.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTAL1 = totBeTAL.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTAT2 = totBeTAT.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTBT1 = totBeTBT.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTBL1 = totBeTBL.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTBT2 = totBeTBT.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTST1 = totBerST.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTSL1 = totBerSL.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTST2 = totBerST.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTPIN = totBerTPi.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const formatTAT1 = totBeTAT.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTAL1 = totBeTAL.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTAT2 = totBeTAT.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTBT1 = totBeTBT.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTBL1 = totBeTBL.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTBT2 = totBeTBT.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTST1 = totBerST.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTSL1 = totBerSL.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTST2 = totBerST.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTPIN = totBerTPi.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
         // const formatTYT1 = totBerTYTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTYL1 = totBerTYLap.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTYT2 = totBerTYTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTXT1 = totBerTXTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTXL1 = totBerTXLap.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTXT2 = totBerTXTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatKAWA = kaw.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const formatKAWA = kaw.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
 
         setTabelBalok({
             nama: nama || '-',

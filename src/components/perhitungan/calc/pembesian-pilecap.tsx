@@ -78,8 +78,23 @@ const useCalcPembesianPilecap = (setTabelPilecap: SetTabelPilecapProps) => {
     const { toast } = useToast()
 
     const calcPilecap = (data: PilecapData) => {
-        const { nama, p, l, t, jml, tSBet, diaTAY, jrkTAY, diaTAX, jrkTAX, diaTBY, jrkTBY, diaTBX, jrkTBX, satuan } =
-            data
+        const {
+            nama,
+            p,
+            l,
+            t,
+            jml,
+            tSBet,
+            diaTAY,
+            jrkTAY,
+            diaTAX,
+            jrkTAX,
+            diaTBY,
+            jrkTBY,
+            diaTBX,
+            jrkTBX,
+            satuan
+        } = data
 
         // DIAMETER TUL ATAS Y
         let diaTAtY: any
@@ -203,7 +218,7 @@ const useCalcPembesianPilecap = (setTabelPilecap: SetTabelPilecapProps) => {
         // -----------------------------
         const pjgTBY = P - tSB * 2
         const pjgTekTBY = T - tSB * 2
-        const kaitTBY = 4 * dTBY * 2
+        const kaitTBY = 6 * dTBY * 2
         const nTBY = Math.ceil(pjgTBY / jTBY)
         const berTBY = ((0.25 * (22 / 7) * dTBY ** 2) / 1000000) * 7850
         const pjgGelTBY = pjgTBY + pjgTekTBY * 2 + kaitTBY
@@ -215,7 +230,7 @@ const useCalcPembesianPilecap = (setTabelPilecap: SetTabelPilecapProps) => {
         // -----------------------------
         const pjgTBX = P - tSB * 2
         const pjgTekTBX = T - tSB * 2
-        const kaitTBX = 4 * dTBX * 2
+        const kaitTBX = 6 * dTBX * 2
         const nTBX = Math.ceil(pjgTBX / jTBX)
         const berTBX = ((0.25 * (22 / 7) * dTBX ** 2) / 1000000) * 7850
         const pjgGelTBX = pjgTBX + pjgTekTBX * 2 + kaitTBX
@@ -226,11 +241,11 @@ const useCalcPembesianPilecap = (setTabelPilecap: SetTabelPilecapProps) => {
         // TULANGAN ATAS ARAH Y
         // -----------------------------
         const pjgTAY = P - tSB * 2
-        const pjgTekTAY = 8 * dTAY * 2
-        const kaitTAY = 4 * dTAY * 2
+        const pjgTekTAY = T - tSB * 2
+        const kaitTAY = 6 * dTAY * 2
         const nTAY = Math.ceil(pjgTAY / jTAY)
         const berTAY = ((0.25 * (22 / 7) * dTAY ** 2) / 1000000) * 7850
-        const pjgGelTAY = pjgTAY + pjgTekTAY + kaitTAY
+        const pjgGelTAY = pjgTAY + pjgTekTAY * 2 + kaitTAY
         const berGelTAY = pjgGelTAY * berTAY
         const totBerTAY = (nTAY * berGelTAY) / 1000
 
@@ -238,11 +253,11 @@ const useCalcPembesianPilecap = (setTabelPilecap: SetTabelPilecapProps) => {
         // TULANGAN ATAS ARAH X
         // -----------------------------
         const pjgTAX = P - tSB * 2
-        const pjgTekTAX = 8 * dTAX * 2
-        const kaitTAX = 4 * dTAX * 2
+        const pjgTekTAX = T - tSB * 2
+        const kaitTAX = 6 * dTAX * 2
         const nTAX = Math.ceil(pjgTAX / jTAX)
         const berTAX = ((0.25 * (22 / 7) * dTAX ** 2) / 1000000) * 7850
-        const pjgGelTAX = pjgTAX + pjgTekTAX + kaitTAX
+        const pjgGelTAX = pjgTAY + pjgTekTAY * 2 + kaitTAY
         const berGelTAX = pjgGelTAX * berTAX
         const totBerTAX = (nTAX * berGelTAX) / 1000
 
@@ -259,14 +274,30 @@ const useCalcPembesianPilecap = (setTabelPilecap: SetTabelPilecapProps) => {
 
         const volBeton = Pm * Lm * Tm
         const totVolBet = volBeton * JML
-        const kaw = totVolBet * 0.5
+        // const kaw = totVolBet * 0.5
+        const kaw = vol * (1.5 / 100)
 
-        const formatVOL = vol.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const formatVOL = vol.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
         // const formatTUT = totBerTU.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTAY = totBerTAY.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTAX = totBerTAX.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTBY = totBerTBY.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTBX = totBerTBX.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const formatTAY = totBerTAY.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTAX = totBerTAX.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTBY = totBerTBY.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTBX = totBerTBX.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
         // const formatTAT1 = totBeTAT.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTAL1 = totBeTAL.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTAT2 = totBeTAT.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
@@ -283,7 +314,10 @@ const useCalcPembesianPilecap = (setTabelPilecap: SetTabelPilecapProps) => {
         // const formatTXT1 = totBerTXTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTXL1 = totBerTXLap.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
         // const formatTXT2 = totBerTXTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatKAWA = kaw.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const formatKAWA = kaw.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
 
         setTabelPilecap({
             nama: nama || '-',

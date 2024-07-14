@@ -269,24 +269,73 @@ const useCalcPembesianKolom = (setTabelKolom: SetTabelKolomProps) => {
         const beratTXLap = ((0.25 * (22 / 7) * dTT ** 2) / 1000000) * 7850
         const totBerTXLap = (pTXLap / 1000) * nTXLap * beratTXLap
 
-        const vol = totBerTXLap + totBerTXTum + totBerTYLap + totBerTYTum + totBerSLap + totBerSTum + totBerTU
-        const volBeton = (luPK * T) / 10 ** 9
-        const totVBeton = volBeton * JML
-        const kaw = totVBeton * 0.5
+        const TTY1 = totBerTYTum || 0
+        const TLY1 = totBerTYLap || 0
+        const TTX1 = totBerTXTum || 0
+        const TLX1 = totBerTXLap || 0
 
-        const formatVOL = vol.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTUT = totBerTU.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTST1 = totBerSTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTSL1 = totBerSLap.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTST2 = totBerSTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const volTies = TLX1 + TTX1 + TLY1 + TTY1
+        const vol = volTies + totBerSLap + totBerSTum + totBerTU
+        // const volBeton = (luPK * T) / 10 ** 9
+        // const totVBeton = volBeton * JML
+        const kaw = vol * (1.5 / 100)
 
-        const formatTYT1 = totBerTYTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTYL1 = totBerTYLap.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTYT2 = totBerTYTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTXT1 = totBerTXTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTXL1 = totBerTXLap.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatTXT2 = totBerTXTum.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-        const formatKAWA = kaw.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+        const formatVOL = vol.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTUT = totBerTU.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTST1 = totBerSTum.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTSL1 = totBerSLap.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTST2 = totBerSTum.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+
+        const formatTYT01 = totBerTYTum.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTYL01 = totBerTYLap.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTYT02 = totBerTYTum.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTXT01 = totBerTXTum.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTXL01 = totBerTXLap.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatTXT02 = totBerTXTum.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+        const formatKAWA = kaw.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })
+
+        const formatTYT1 = formatTYT01 === 'NaN' ? '-' : formatTYT01
+        const formatTYL1 = formatTYL01 === 'NaN' ? '-' : formatTYL01
+        const formatTYT2 = formatTYT02 === 'NaN' ? '-' : formatTYT02
+        const formatTXT1 = formatTXT01 === 'NaN' ? '-' : formatTXT01
+        const formatTXL1 = formatTXL01 === 'NaN' ? '-' : formatTXL01
+        const formatTXT2 = formatTXT02 === 'NaN' ? '-' : formatTXT02
 
         setTabelKolom({
             nama: nama || '-',
